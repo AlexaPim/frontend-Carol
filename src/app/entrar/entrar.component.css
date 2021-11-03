@@ -1,0 +1,12 @@
+#img-bg{
+    background-image: url();
+
+    min-height: 695px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
