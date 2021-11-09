@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+.fs-54 {
+    font-size: 54px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
 .form-control:focus {
     box-shadow: none;
 }

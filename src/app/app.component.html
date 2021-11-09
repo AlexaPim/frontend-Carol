@@ -1,5 +1,5 @@
-<div class="d-flex flex-column min-vh-100">
-<app-menu></app-menu>
-<app-rodape class="mt-auto"></app-rodape>
-</div>
-<!--<router-outlet></router-outlet>-->
+<app-menu *ngIf = 'auth.logado()'></app-menu>
+
+<router-outlet></router-outlet>
+
+<app-rodape *ngIf = 'auth.logado()'></app-rodape>
