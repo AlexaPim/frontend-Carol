@@ -10,3 +10,15 @@
 .form-control:focus {
     box-shadow: none;
 }
+
+#inicio {
+    background: linear-gradient(purple,blueviolet, violet);
+    /* background-image: url("./img/Background.svg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  
+    width: 100%;
+    height: 100vh;
+  }
