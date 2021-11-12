@@ -6,5 +6,5 @@ export class Tema {
     public descricao: string
     public qntd_post: number
     public relevante: number
-    public postagem: Postagem
+    public postagem: Postagem[]
 }

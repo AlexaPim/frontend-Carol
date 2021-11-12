@@ -23,7 +23,6 @@ export class AuthService {
   }
 
   logado() {
-    
     return environment.token !== ''
   }
 
