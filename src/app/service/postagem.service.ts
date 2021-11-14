@@ -11,28 +11,24 @@ export class PostagemService {
 
   constructor(private http: HttpClient) { }
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
-  }
-
   getAllPostagens(): Observable<Postagem[]> {
-    return this.http.get<Postagem[]>(`${environment.baseUrl}/postagem`, this.token)
+    return this.http.get<Postagem[]>(`${environment.baseUrl}/postagem`, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
   getByIdPostagem(id: number): Observable<Postagem> {
-    return this.http.get<Postagem>(`${environment.baseUrl}/postagem/${id}`, this.token)
+    return this.http.get<Postagem>(`${environment.baseUrl}/postagem/${id}`, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem> {
-    return this.http.post<Postagem>(`${environment.baseUrl}/postagem`, postagem, this.token)
+    return this.http.post<Postagem>(`${environment.baseUrl}/postagem`, postagem, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem> {
-    return this.http.put<Postagem>(`${environment.baseUrl}/postagem`, postagem, this.token)
+    return this.http.put<Postagem>(`${environment.baseUrl}/postagem`, postagem, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
   deletePostagem(id: number) {
-    return this.http.delete(`${environment.baseUrl}/postagem/${id}`, this.token)
+    return this.http.delete(`${environment.baseUrl}/postagem/${id}`, { headers: { 'Authorization': environment.userLogin.token } })
   }
 }
 

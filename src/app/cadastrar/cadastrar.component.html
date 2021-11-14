@@ -32,17 +32,17 @@
                             </div>
                             <div class="form-group">
                                 <label for="senha">Senha</label>
-                                <input (input)='confirmaSenha($event)' class="form-control" type="password" name="senha"
+                                <input [(ngModel)]='usuario.senha' class="form-control" type="password" name="senha"
                                     id="senha" placeholder="Sua senha">
                             </div>
                             <div class="form-group">
                                 <label for="confirmaSenha">Confirmar Senha</label>
-                                <input [(ngModel)]='usuario.senha' class="form-control" type="password"
+                                <input (input)='setaSenhaParaConfirmar($event)' class="form-control" type="password"
                                     name="confirmaSenha" id="confirmaSenha" placeholder="Confirme sua senha">
                             </div>
                             <div class="form-group">
-                                <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
-                                    <option> Selecione um tipo de usuário: </option>
+                                <label for="tipo">Selecione o tipo de usuário</label>
+                                <select class="form-control" name="tipo" id="tipo" (change)='setaTipoUsuario($event)'>
                                     <option value="normal" selected>Normal</option>
                                     <option value="adm">Administrador</option>
                                 </select>

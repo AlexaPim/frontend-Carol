@@ -22,11 +22,11 @@ export class TemaComponent implements OnInit {
 
   ngOnInit() {
 
-    if (environment.token == '') {
-
+    if (environment.userLogin.token == '') {
       this.router.navigate(['/entrar'])
+    } else {
+      this.findAllTemas()
     }
-    this.findAllTemas()
   }
 
   findAllTemas() {

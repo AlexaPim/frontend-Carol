@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'PIAngular';
 
   constructor(
-    public auth: AuthService
+    public authService: AuthService
   ) { }
 
 }

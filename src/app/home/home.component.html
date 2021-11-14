@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Carol</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand text-white" href="#">Carol</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#textoNavbar"
         aria-controls="textoNavbar" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
@@ -7,28 +7,27 @@
     <div class="collapse navbar-collapse" id="textoNavbar">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-link text-white" href="#home">Home <span class="sr-only">(Página atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Sobre <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-link text-white" href="/#projeto">Sobre <span class="sr-only">(Página atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Equipe <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-link text-white" href="#equipe">Equipe <span class="sr-only">(Página atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Contato <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-link text-white" href="#contato">Contato <span class="sr-only">(Página atual)</span></a>
             </li>
-
         </ul>
         <span class="navbar-text">
-            <a *ngIf="!logado()" routerLink='/entrar'>Entrar</a>
+            <a class="text-white" *ngIf="!logado()" routerLink='/entrar'>Entrar</a>
         </span>
     </div>
 </nav>
 
 <!-- Carousel -->
 <div class="bg-page mt-0">
-    <div class="container d-flex mb-0">
+    <div class="container d-flex mb-0 " id="home">
 
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
@@ -56,7 +55,7 @@
     <!-- /Carousel -->
 
 
-    <div class="container">
+    <div class="container" id="projeto">
         <div class="col-md-12 mt-0">
             <h1 class="d-flex justify-content-start mt-5 mb-5">Sobre o projeto</h1>
             <div class="col-md-12">
@@ -85,7 +84,7 @@
                     Repellat, ipsam. Saepe, fuga?</p>
             </div>
             <div class="col-md-6">
-                <img src="./assets/col-md.jpg" width="600px" alt="">
+                <img src="https://i.imgur.com/3TVqYBf.jpg" width="500px" alt="">
             </div>
         </div>
 
@@ -105,15 +104,15 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="equipe">
         <div class="row">
-            <div class="col-md-12 mt-5">
+            <div class="col-md-12 mt-5 mb-5">
                 <h3>Sobre a equipe</h3>
 
                 <div class="row">
                     <div class="col-md-12">
 
-                        <div class="card-group align-items-center">
+                        <div class="card-group">
 
                             <div class="card align-items-center">
                                 <img class="card-img-top" src="https://i.imgur.com/m3bxspd.png"
@@ -212,6 +211,34 @@
         </div>
     </div>
 
+    <div class="container d-flex justify-content-center mt-5" id="contato">
+
+        <div class="col-md-8" style="border-radius: 1rem;">
+
+            <form>
+                <div class="form-group">
+                    <h3 class="mb-5 mt-3 text-center">Entre em contato</h3>
+                    <label for="exampleFormControlInput1">Nome completo</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Maria Silva">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Endereço de e-mail</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="nome@exemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Mensagem</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="Digite sua mensagem aqui"></textarea>
+                    <button class="btn-lg btn-block gradient-custom mt-2" type="submit">Enviar</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
     <footer>
         <div class="row mb-0">
             <div class="col-md-12 d-flex justify-content-center mt-5">
@@ -224,7 +251,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <p class="text-center">&copy; Todos os direitos reservados para: Carol | Generation Brasil 2021 </p>
+                <p class="text-center">&copy;2021 Todos os direitos reservados para: Carol | Generation Brasil</p>
             </div>
         </div>
 

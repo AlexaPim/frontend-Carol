@@ -11,29 +11,24 @@ export class TemaService {
 
   constructor(private http: HttpClient) { }
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
-
-  }
-
   getAllTema(): Observable<Tema[]> {
-    return this.http.get<Tema[]>(`${environment.baseUrl}/tema`, this.token)
+    return this.http.get<Tema[]>(`${environment.baseUrl}/tema`, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
   getByIdTema(id: number): Observable<Tema> {
-    return this.http.get<Tema>(`${environment.baseUrl}/tema/${id}`, this.token)
+    return this.http.get<Tema>(`${environment.baseUrl}/tema/${id}`, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
   postTema(tema: Tema): Observable<Tema> {
-    return this.http.post<Tema>(`${environment.baseUrl}/tema`, tema, this.token)
+    return this.http.post<Tema>(`${environment.baseUrl}/tema`, tema, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
   putTema(tema: Tema): Observable<Tema> {
-    return this.http.put<Tema>(`${environment.baseUrl}/tema`, tema, this.token)
+    return this.http.put<Tema>(`${environment.baseUrl}/tema`, tema, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
   deleteTema(id: number) {
-    return this.http.delete(`${environment.baseUrl}/tema/${id}`, this.token)
+    return this.http.delete(`${environment.baseUrl}/tema/${id}`, { headers: { 'Authorization': environment.userLogin.token } })
   }
 }
 

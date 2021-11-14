@@ -11,8 +11,7 @@ import { AuthService } from '../service/auth.service';
 export class CadastrarComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
-  confirmarSenha: string
-  tipoUsuario: string 
+  senhaParaConfirmar: string
 
   constructor(
     private authService: AuthService,
@@ -20,35 +19,35 @@ export class CadastrarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    window.scroll(0,0)
-
+    window.scroll(0, 0)
   }
 
-  confirmaSenha(event: any) {
-    this.confirmarSenha = event.target.value
+  setaSenhaParaConfirmar(event: any) {
+    this.senhaParaConfirmar = event.target.value
   }
 
-  tipoUser(event: any) {
-    this.tipoUsuario = event.target.value
+  setaTipoUsuario(event: any) {
+    this.usuario.tipo = event.target.value
   }
 
   cadastrar() {
-    this.usuario.tipo = this.tipoUsuario
 
-    if(this.usuario.senha != this.confirmarSenha) {
+    if (this.usuario.senha !== this.senhaParaConfirmar) {
       alert('As senhas estão incorretas.')
-    }else {
-      console.log(this.usuario.email);
-      
-      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
-        this.usuario = resp
-        this.router.navigate(['/entrar'])
-        alert('Usuário cadastrado com sucesso!')
+    } else {
+      this.authService.cadastrar(this.usuario).subscribe({
+        next: res => {
+          this.usuario = res
+          this.router.navigate(['/entrar'])
+          alert('Usuário cadastrado com sucesso!')
+        },
+        error: error => {
+          console.error('There was an error!', error);
+          alert("Erro ao cadastrar o usuário")
+        }
       })
     }
 
   }
-
 
 }

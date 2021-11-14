@@ -1,9 +1,13 @@
+.navbar {
+    background-color: rgb(188, 36, 199);
+}
+
 .missao {
     background: violet;
 }
 
 .bg-page {
-    background-image: url('https://img.freepik.com/fotos-gratis/gradiente-de-rosa-pastel-degrade-foto-abstrata-desfocada-linhas-suaves-cor-de-fundo_49683-4158.jpg?size=626&ext=jpg');
+    background: linear-gradient(#9D4EDD, #8187DC);
     background-repeat: no-repeat;
     background-position: center;
     background-position-x: center;
@@ -18,4 +22,15 @@
 .tm-social {
     width: 30px;
     height: 30px;
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #9D4EDD;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #9D4EDD, #8187DC);
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #9D4EDD, #8187DC)
 }

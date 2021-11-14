@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment.prod';
   providedIn: 'root'
 })
 export class AuthService {
-  
+
   constructor(
     private http: HttpClient
   ) { }
@@ -23,7 +23,20 @@ export class AuthService {
   }
 
   logado() {
-    return environment.token !== ''
+    return environment.userLogin.token !== ''
+  }
+
+  limpaEnvironment() {
+    environment.userLogin = {
+      id: -1,
+      nome: '',
+      email: '',
+      senha: '',
+      token: '',
+      dataNascimento: '',
+      foto: '',
+      tipo: ''
+    }
   }
 
 }

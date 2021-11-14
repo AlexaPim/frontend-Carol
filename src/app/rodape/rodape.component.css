@@ -27,7 +27,10 @@ ul.social-network li {
     color: blue;
 }
 
+.fa-instagram-square:hover {
+    color: pink;
+}
+
 .footer-copyright {
-    background-color: #BEA0F0
-    ;
+    background-color: #BEA0F0;
 }
