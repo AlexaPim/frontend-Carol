@@ -13,7 +13,7 @@
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
-    backdrop-filter: blur(5px)
+    overflow-x: hidden;
 }
 
 .logo-carol {
@@ -22,11 +22,18 @@
 }
 
 .bg-sobre {
-    background: linear-gradient(rgb(228, 120, 228), rgb(233, 127, 233));
+    background: #EAB7FC;
+    border-radius: 1rem;
 }
 
 .missao {
-    background: violet;
+    background: #EAB7FC;
+    padding: auto;
+    border-radius: 1rem;
+}
+
+.img-fluid {
+    border-radius: 1rem;
 }
 
 .p-texto {

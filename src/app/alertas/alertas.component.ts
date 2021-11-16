@@ -7,6 +7,12 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./alertas.component.css']
 })
 export class AlertasComponent implements OnInit {
+  showAlertSuccess(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
+  showAlertDanger(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
 
   @Input() message: string
   @Input() type: string = 'success'

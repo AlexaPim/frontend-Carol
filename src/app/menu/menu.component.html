@@ -13,7 +13,7 @@
         <p class="m-0 font-weight-bold-light text-white fs-16">Olá, {{ userLogin.nome }}</p>
       </li>
       <li class="nav-item pl-3">
-        <a href="">
+        <a [routerLink]="['/usuario-edit', id]">
           <p class="text-white fs-16 m-0">
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
           </p>

@@ -22,6 +22,10 @@ export class AuthService {
     return this.http.post<Usuario>(`${environment.baseUrl}/usuarios/cadastrar`, usuario)
   }
 
+  getByIdUsuario(id: number): Observable<Usuario>{
+    return this.http.get<Usuario>(`${environment.baseUrl}/usuarios/${id}`)
+  }
+
   logado() {
     return environment.userLogin.token !== ''
   }

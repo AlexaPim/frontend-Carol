@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     HomeComponent,
     AlertasComponent,
     PostagemEditComponent,
-    PostagemDeleteComponent
+    PostagemDeleteComponent,
+    UsuarioEditComponent
 
   ],
   imports: [
