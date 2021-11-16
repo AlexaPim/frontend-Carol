@@ -16,8 +16,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class PostagemEditComponent implements OnInit {
 
-  postagem: Postagem = new Postagem()
-  tema: Tema = new Tema()
+  postagem: Postagem
   listaTemas: Tema[]
 
   constructor(
@@ -34,39 +33,14 @@ export class PostagemEditComponent implements OnInit {
     if (!environment.userLogin.token) {
       this.router.navigate(['/entrar'])
     } else {
-      let id = this.route.snapshot.params['id']
-      this.findPostagemById(id)
-      this.getAllThemes()
+      const id: number = parseInt(this.route.snapshot.params['id'])
+      this.postagem = environment.postagens.find(post => post.id === id) || new Postagem()
+      this.listaTemas = environment.temas
     }
   }
 
-  findPostagemById(id: number) {
-    this.postagemService.getByIdPostagem(id).subscribe({
-      next: data => {
-        this.postagem = data
-        this.tema.id = this.postagem.tema.id
-        console.log(data.date);
-
-      },
-      error: error => {
-        console.error('There was an error!', error);
-      }
-    })
-  }
-
-  getAllThemes() {
-    this.temaService.getAllTema().subscribe({
-      next: data => {
-        this.listaTemas = data
-      },
-      error: error => {
-        console.error('There was an error!', error);
-      }
-    })
-  }
-
   update() {
-    this.postagem.tema = this.tema
+    this.postagem.tema = environment.temas.find(tema => tema.id == this.postagem.tema.id) || environment.temas[0]
     delete this.postagem.date
 
     this.postagemService.putPostagem(this.postagem).subscribe({
