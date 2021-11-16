@@ -10,7 +10,6 @@ import { AuthService } from '../service/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  valida: string = '';
 
   constructor(
     private router: Router,
@@ -26,7 +25,6 @@ export class HomeComponent implements OnInit {
 
   enviar() {
     alert('Mensagem enviada com sucesso!!')
-    alert(this.valida)
     this.router.navigate(['/home'])
 
   }
