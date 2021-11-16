@@ -23,7 +23,7 @@ export class PostagemService {
     return this.http.post<Postagem>(`${environment.baseUrl}/postagem`, postagem, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
-  putPostagem(postagem: any): Observable<Postagem> {
+  putPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.put<Postagem>(`${environment.baseUrl}/postagem`, postagem, { headers: { 'Authorization': environment.userLogin.token } })
   }
 

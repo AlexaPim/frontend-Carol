@@ -67,9 +67,9 @@ export class PostagemEditComponent implements OnInit {
 
   update() {
     this.postagem.tema = this.tema
-    const { date, ...postagemAtualizada } = this.postagem
+    delete this.postagem.date
 
-    this.postagemService.putPostagem(postagemAtualizada).subscribe({
+    this.postagemService.putPostagem(this.postagem).subscribe({
       next: data => {
         this.postagem = data
         this.alertas.showAlertSuccess("Postagem atualizada com sucesso!")
