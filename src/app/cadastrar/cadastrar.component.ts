@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -39,11 +41,11 @@ export class CadastrarComponent implements OnInit {
         next: res => {
           this.usuario = res
           this.router.navigate(['/entrar'])
-          alert('Usuário cadastrado com sucesso!')
+          this.alertas.showAlertSuccess('Usuário cadastrado com sucesso!')
         },
         error: error => {
           console.error('There was an error!', error);
-          alert("Erro ao cadastrar o usuário")
+          this.alertas.showAlertDanger("Erro ao cadastrar o usuário")
         }
       })
     }
