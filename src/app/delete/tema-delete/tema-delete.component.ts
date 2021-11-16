@@ -33,16 +33,28 @@ export class TemaDeleteComponent implements OnInit {
   }
 
   findByIdTema(id: number) {
-    this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
-      this.tema = resp
+    this.temaService.getByIdTema(id).subscribe({
+      next: res => {
+        this.tema = res
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
     })
   }
 
   apagar() {
-    this.temaService.deleteTema(this.idTema).subscribe(() => {
-      this.alertas.showAlertSuccess('Tema apagado com sucesso!')
-      this.router.navigate(['/tema'])
+    this.temaService.deleteTema(this.idTema).subscribe({
+      next: res => {
+        this.alertas.showAlertSuccess('Tema apagado com sucesso!')
+        this.router.navigate(['/tema'])
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
     })
+
+
   }
 
 }

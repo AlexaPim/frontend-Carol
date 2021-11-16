@@ -32,19 +32,27 @@ export class TemaEditComponent implements OnInit {
   }
 
   findByIdTema(id: number) {
-    this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
-      this.tema = resp
-
+    this.temaService.getByIdTema(id).subscribe({
+      next: res => {
+        this.tema = res
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
     })
   }
 
   atualizar() {
-    this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
-      this.tema = resp
-      this.alertas.showAlertSuccess('Tema atualizado com sucesso!')
-      this.router.navigate(['/tema'])
+    this.temaService.putTema(this.tema).subscribe({
+      next: res => {
+        this.tema = res
+        this.alertas.showAlertSuccess('Tema atualizado com sucesso!')
+        this.router.navigate(['/tema'])
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
     })
   }
-
 
 }
