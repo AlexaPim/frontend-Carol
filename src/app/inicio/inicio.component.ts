@@ -75,11 +75,10 @@ export class InicioComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe({
       next: res => {
-        console.log(res);
         this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
         this.inicializaVariaveis()
-        this.listaPostagens.concat(res)
-        this.listaPostagensDoUsuario.concat(res)
+        this.listaPostagens.push(res)
+        this.listaPostagensDoUsuario.push(res)
       },
       error: error => {
         console.error('There was an error!', error);
