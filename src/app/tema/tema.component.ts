@@ -12,7 +12,7 @@ import { TemaService } from '../service/tema.service';
 })
 export class TemaComponent implements OnInit {
 
-  listaTemas: any[] = ['alfa', 'beta', 'delta']
+  listaTemas: any[]
   tema: Tema = new Tema()
 
   constructor(

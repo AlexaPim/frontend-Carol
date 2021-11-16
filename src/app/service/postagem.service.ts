@@ -23,7 +23,7 @@ export class PostagemService {
     return this.http.post<Postagem>(`${environment.baseUrl}/postagem`, postagem, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
-  putPostagem(postagem: Postagem): Observable<Postagem> {
+  putPostagem(postagem: any): Observable<Postagem> {
     return this.http.put<Postagem>(`${environment.baseUrl}/postagem`, postagem, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
@@ -31,4 +31,3 @@ export class PostagemService {
     return this.http.delete(`${environment.baseUrl}/postagem/${id}`, { headers: { 'Authorization': environment.userLogin.token } })
   }
 }
-
