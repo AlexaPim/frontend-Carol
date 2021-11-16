@@ -12,8 +12,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class TemaDeleteComponent implements OnInit {
 
-  tema: Tema = new Tema()
-  idTema: number
+  tema: Tema
 
   constructor(
     private temaService: TemaService,
@@ -25,35 +24,23 @@ export class TemaDeleteComponent implements OnInit {
   ngOnInit() {
     if (environment.userLogin.token == '') {
       this.router.navigate(['/entrar'])
+    } else {
+      const id: number = parseInt(this.route.snapshot.params['id'])
+      this.tema = environment.temas.find(tema => tema.id === id) || new Tema()
     }
-
-    this.idTema = this.route.snapshot.params['id']
-    this.findByIdTema(this.idTema)
-
-  }
-
-  findByIdTema(id: number) {
-    this.temaService.getByIdTema(id).subscribe({
-      next: res => {
-        this.tema = res
-      },
-      error: error => {
-        console.error('There was an error!', error);
-      }
-    })
   }
 
   apagar() {
-    this.temaService.deleteTema(this.idTema).subscribe({
-      next: res => {
+    this.temaService.deleteTema(this.tema.id).subscribe({
+      next: () => {
         this.alertas.showAlertSuccess('Tema apagado com sucesso!')
+        environment.temas = environment.temas.filter(tema => tema.id !== this.tema.id)
         this.router.navigate(['/tema'])
       },
       error: error => {
         console.error('There was an error!', error);
       }
     })
-
 
   }
 

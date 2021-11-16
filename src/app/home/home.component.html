@@ -1,26 +1,33 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand text-white" href="#">Carol</a>
+    <img class="navbar-brand logo-carol" src="https://i.imgur.com/ts1DP6O.png" alt="Logo Carol">
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#textoNavbar"
         aria-controls="textoNavbar" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="textoNavbar">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto texto-navbar">
             <li class="nav-item active">
-                <a class="nav-link text-white" href="#home">Home <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-link texto-navbar ml-2" href="#home" style="color: #8D43A7">Home<span
+                        class="sr-only">(Página
+                        atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link text-white" href="/#projeto">Sobre <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-link" href="#projeto" style="color: #8D43A7">Sobre <span class="sr-only">(Página
+                        atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link text-white" href="#equipe">Equipe <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-link" href="#equipe" style="color: #8D43A7">Equipe <span class="sr-only">(Página
+                        atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link text-white" href="#contato">Contato <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-link" href="#contato" style="color: #8D43A7">Contato <span class="sr-only">(Página
+                        atual)</span></a>
             </li>
         </ul>
         <span class="navbar-text">
-            <a class="text-white" *ngIf="!logado()" routerLink='/entrar'>Entrar <i class="fa fa-sign-in" aria-hidden="true"></i></a>            
+            <a class="text-white" *ngIf="!logado()" routerLink='/entrar'>Entrar <i class="fa fa-sign-in"
+                    aria-hidden="true"></i></a>
         </span>
     </div>
 </nav>
@@ -57,17 +64,22 @@
 
     <div class="container" id="projeto">
         <div class="col-md-12 mt-0">
-            <h1 class="d-flex justify-content-start mt-5 mb-5">Sobre o projeto</h1>
-            <div class="col-md-12">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, sint temporibus totam mollitia
-                    facilis amet, dolorum at ipsam dignissimos porro minima ullam! Inventore doloribus ex voluptatem
-                    ab
-                    nam consequuntur cupiditate.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos maiores accusamus odit,
-                    necessitatibus
-                    exercitationem voluptate natus, reprehenderit sed quis ad ipsam! Repellat nisi, dicta vel
-                    sapiente
-                    iure distinctio reprehenderit unde?</p>
+            <h1 class="d-flex justify-content-center mt-5 mb-5">Sobre o projeto</h1>
+            <div class="col-md-12 bg-sobre">
+                <p class="fs-18">
+                    Rede social para mulheres em vulnerabilidade social e econômica, que estão em busca de reinserção no
+                    mercado de trabalho.
+                </p>
+                <p class="fs-18">
+                    O objetivo é proporcionar atendimento da forma mais prática possível e gratuita a mulheres que
+                    estejam passando por momento de vulnerabilidade econômica. A intenção é apresentar uma rede social
+                    na qual elas possam postar o seu objetivo, além da troca de experiências entre as usuárias.
+                </p>
+                <p class="fs-18">
+                    Recrutadores poderão selecionar a postagem que gostariam de oferecer ajuda e ter acesso às
+                    informações da mulher para contato. A forma de identificação ou busca do post é através da geração
+                    de um ID para cada post criado.
+                </p>
             </div>
         </div>
 
@@ -75,28 +87,30 @@
             <div class="col-md-6 missao">
                 <h2 class="ods mb-3 mt-4">ODS 16</h2>
                 <h4 class="mb-3">Paz, Justiça e Instituições Eficazes</h4>
-                <p>Promover sociedades pacíficas e inclusivas para o desenvolvimento sustentável, proporcionar o
+                <p class="fs-18">Promover sociedades pacíficas e inclusivas para o desenvolvimento sustentável,
+                    proporcionar o
                     acesso à justiça para todos e construir instituições eficazes, responsáveis e inclusivas em
                     todos os níveis.</p>
-                <h6 class="mt-5 mb-2">Meta:</h6>
-                <p>Desenvolver instituições eficazes, responsáveis e transparentes em todos os níveis.</p>
+                <h5 class="mt-4 mb-2">Meta:</h5>
+                <p class="fs-18">Desenvolver instituições eficazes, responsáveis e transparentes em todos os níveis.
+                </p>
             </div>
             <div class="col-md-6">
-                <img src="https://i.imgur.com/3TVqYBf.jpg" width="550px" alt="">
+                <img class="img-fluid" src="https://i.imgur.com/3TVqYBf.jpg" width="500px" alt="">
             </div>
         </div>
 
     </div>
 
-    <div class="container" id="equipe" >
+    <div class="container" id="equipe">
         <div class="row">
             <div class="col-md-12 mt-5 mb-5">
-                <h3>Sobre a equipe</h3>
+                <h3>Equipe</h3>
 
                 <div class="row">
                     <div class="col-md-12" style="border-radius: 1rem;">
 
-                        <div class="card-group" >
+                        <div class="card-group">
 
                             <div class="card align-items-center">
                                 <img class="card-img-top" src="https://i.imgur.com/m3bxspd.png"
@@ -105,7 +119,7 @@
                                     <h5 class="card-title text-center">Alexssandra Prado</h5>
                                     <h6 class="card-subtitle mb-2 text-muted text-center">FullStack</h6>
                                     <hr>
-                                    <a href="https://github.com/AlexaPim" class="ml-3 p-3" target="_blanck">
+                                    <a href="https://github.com/AlexaPim" class="p-3" target="_blanck">
                                         <img class="tm-social" src="https://i.imgur.com/S6SoXO3.png"
                                             alt="Logo do Github">
                                     </a>
@@ -225,8 +239,8 @@
                     <label for="exampleFormControlTextarea1">Mensagem</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                         placeholder="Digite sua mensagem aqui"></textarea>
-                    <button class="btn-lg btn-block gradient-custom mt-2" type="submit"
-                        (click)='enviar()' type="reset">Enviar</button>
+                    <button class="btn-lg btn-block gradient-custom mt-2" type="submit" (click)='enviar()'
+                        type="reset">Enviar</button>
                 </div>
             </form>
 

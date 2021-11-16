@@ -1,9 +1,9 @@
 .navbar {
-    background-color: rgb(188, 36, 199);
+    background-color: #EAB7FC;
 }
 
-.missao {
-    background: violet;
+.texto-navbar {
+    color: #8D43A7;
 }
 
 .bg-page {
@@ -13,10 +13,24 @@
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
+    backdrop-filter: blur(5px)
 }
 
-.beneficios {
-    background: rgb(245, 59, 245);
+.logo-carol {
+    width: 60px;
+    margin: 0;
+}
+
+.bg-sobre {
+    background: linear-gradient(rgb(228, 120, 228), rgb(233, 127, 233));
+}
+
+.missao {
+    background: violet;
+}
+
+.p-texto {
+    font-size: 18px;
 }
 
 .tm-social {

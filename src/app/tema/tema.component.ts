@@ -12,7 +12,7 @@ import { TemaService } from '../service/tema.service';
 })
 export class TemaComponent implements OnInit {
 
-  listaTemas: any[]
+  listaTemas: Tema[] = environment.temas
   tema: Tema = new Tema()
 
   constructor(
@@ -23,23 +23,9 @@ export class TemaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     if (environment.userLogin.token == '') {
       this.router.navigate(['/entrar'])
-    } else {
-      this.findAllTemas()
     }
-  }
-
-  findAllTemas() {
-    this.temaService.getAllTema().subscribe({
-      next: data => {
-        this.listaTemas = data
-      },
-      error: error => {
-        console.error('There was an error!', error);
-      }
-    })
   }
 
   cadastrar() {

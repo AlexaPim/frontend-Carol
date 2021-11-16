@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
   enviar() {
     alert('Mensagem enviada com sucesso!!')
     this.router.navigate(['/home'])
-
   }
 
 }

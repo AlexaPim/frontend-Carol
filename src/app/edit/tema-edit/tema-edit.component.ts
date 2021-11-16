@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class TemaEditComponent implements OnInit {
 
-  tema: Tema = new Tema()
+  tema: Tema
 
   constructor(
     private temaService: TemaService,
@@ -24,22 +24,10 @@ export class TemaEditComponent implements OnInit {
   ngOnInit() {
     if (environment.userLogin.token == '') {
       this.router.navigate(['/entrar'])
+    } else {
+      const id: number = parseInt(this.route.snapshot.params['id'])
+      this.tema = environment.temas.find(tema => tema.id === id) || new Tema()
     }
-
-
-    let id = this.route.snapshot.params['id']
-    this.findByIdTema(id)
-  }
-
-  findByIdTema(id: number) {
-    this.temaService.getByIdTema(id).subscribe({
-      next: res => {
-        this.tema = res
-      },
-      error: error => {
-        console.error('There was an error!', error);
-      }
-    })
   }
 
   atualizar() {
