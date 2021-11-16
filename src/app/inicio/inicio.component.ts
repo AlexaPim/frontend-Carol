@@ -49,6 +49,7 @@ export class InicioComponent implements OnInit {
     this.temaService.getAllTema().subscribe({
       next: res => {
         this.listaTemas = res
+        environment.temas = res
       },
       error: error => {
         console.error('There was an error!', error);
@@ -60,7 +61,8 @@ export class InicioComponent implements OnInit {
     this.postagemService.getAllPostagens().subscribe({
       next: res => {
         this.listaPostagens = res
-        this.listaPostagensDoUsuario = this.listaPostagens.filter(post => post.usuario.id == environment.userLogin.id)
+        environment.postagens = res
+        this.listaPostagensDoUsuario = res.filter(post => post.usuario.id == environment.userLogin.id)
       },
       error: error => {
         console.error('There was an error!', error);

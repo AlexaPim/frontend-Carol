@@ -1,3 +1,6 @@
+import { Postagem } from "src/app/model/Postagem";
+import { Tema } from "src/app/model/Tema";
+
 export const environment = {
   production: true,
   baseUrl: 'https://projcarol.herokuapp.com',
@@ -11,5 +14,7 @@ export const environment = {
     dataNascimento: '',
     foto: '',
     tipo: ''
-  }
+  },
+  postagens: [new Postagem()],
+  temas: [new Tema()]
 };

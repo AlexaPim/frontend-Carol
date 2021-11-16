@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class PostagemDeleteComponent implements OnInit {
 
-  postagem: Postagem = new Postagem()
+  postagem: Postagem
 
   constructor(
     private router: Router,
@@ -27,21 +27,9 @@ export class PostagemDeleteComponent implements OnInit {
     if (!environment.userLogin.token) {
       this.router.navigate(['/entrar'])
     } else {
-      let id = this.route.snapshot.params['id']
-      this.findPostagemById(id)
+      const id: number = parseInt(this.route.snapshot.params['id'])
+      this.postagem = environment.postagens.find(postagem => postagem.id === id) || new Postagem()
     }
-  }
-
-  findPostagemById(id: number) {
-    this.postagemService.getByIdPostagem(id).subscribe({
-      next: data => {
-        this.postagem = data
-      },
-      error: error => {
-        console.error('There was an error!', error);
-        this.alertas.showAlertDanger("findPostagemById fetch error")
-      }
-    })
   }
 
   delete() {
