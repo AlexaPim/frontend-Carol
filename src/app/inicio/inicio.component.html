@@ -1,24 +1,24 @@
 <div class="container-fluid">
-  <div class="row bg-roxo d-flex align-items-center ">
+  <div class="row bg-imagem d-flex align-items-center ">
     <div class="col-md-6">
       <div class="row d-flex justify-content-center">
         <div class="col-md-6">
-          <h1 class="fs-54">Seja bem-vinde!!!</h1>
-          <h5 class="fs-18">Deixe sua opinião e pensamentos aqui...</h5>
+          <h1 class="fs-48">Bem-vinde!!!</h1>
+          <h5 class="fs-18 mt-4">Procure sobre vagas ou anuncie uma que deseja encontrar.</h5>
         </div>
       </div>
 
       <div class="row d-flex justify-content-center mt-3 mb-5">
-        <div class="col-md-6">
-          <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
-          <a class="btn btn-light mr-2" href="#postagens">Ver Postagens</a>
+        <div class="col-md-6 align-items-center">
+          <button class="btn bt-novo-post " data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
+          <a class="btn bt-ver-post mt-1 ml-2" href="#postagens">Ver Postagens</a>
         </div>
       </div>
 
     </div>
 
-    <div class="col-md-6 d-flex justify-content-center">
-      <img src="https://i.imgur.com/ApNskk5.png" alt="" width="500px" height="500px">
+    <div class="col-md-6 d-flex justify-content-center bg-imagem">
+      <img id="imagem-principal" class="img-fluid" src="https://i.imgur.com/LMBHw1f.png" alt="">
     </div>
   </div>
 </div>
@@ -66,9 +66,10 @@
         <div class="card text-center" *ngFor='let item of listaPostagensDoUsuario'>
           <div class="card-body">
             <h5 class="card-title m-0">{{item.titulo}}</h5>
+            <small class="text-muted">Tema: {{item.tema.nome}}</small>
             <p class="card-text mt-3">{{item.texto}}</p>
-            <p class="card-text"><small class="text-muted"> às </small></p>
-
+            <p class="card-text"><small class="text-muted">{{item.date | date: "dd/MM/yyyy"}} às {{item.date
+                | date: "HH:mm"}}</small></p>
             <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
             <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
 
@@ -80,8 +81,16 @@
 
     <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
 
-      <div class="card-columns" *ngFor='let tema of listaTemas'>
-        <div class="card text-center" *ngFor='let item of tema.postagem'>
+      <div class="form-group">
+        <label for="texto">Escolha um tema</label>
+        <select name="tema" id="tema" class="form-control" (change)='escolheTema($event)'>
+          <option *ngFor="let tema of listaTemas" value="{{ tema.id }}">{{ tema.nome }}</option>
+        </select>
+      </div>
+
+
+      <div class="card-columns">
+        <div class="card text-center" *ngFor='let item of postagensPorTemas'>
           <div class="card-body">
             <h5 class="card-title m-0">{{item.titulo}}</h5>
             <p class="card-text mt-3">{{item.texto}}</p>
@@ -125,7 +134,7 @@
         <div class="form-group">
           <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um
               novo</a></label>
-          <select [(ngModel)]='tema.id' name="tema" id="tema" class="form-control">
+          <select [(ngModel)]='temaPostagemId' name="tema" id="tema" class="form-control">
             <option *ngFor=' let item of listaTemas' value="{{ item.id }}">{{ item.descricao }}
             </option>
           </select>

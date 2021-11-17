@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -12,62 +13,50 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class UsuarioEditComponent implements OnInit {
 
-  usuario: Usuario = new Usuario()
-  idUsuario: number
-  confirmarSenha: string
-  tipoUsuario: string 
-  
+  usuario: Usuario = environment.usuario
+  senhaParaConfirmar: string
+  novaSenha: string
 
   constructor(
     private authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
     if (environment.userLogin.token == '') {
       this.router.navigate(['/entrar'])
     }
-    this.idUsuario = this.route.snapshot.params['id']
-    this.findByIdUsuario(this.idUsuario)
-
   }
 
-  confirmaSenha(event: any) {
-    this.confirmarSenha = event.target.value
-  }
-
-  tipoUser(event: any) {
-    this.tipoUsuario = event.target.value
+  verificaSenha() {
+    return this.novaSenha === this.senhaParaConfirmar
   }
 
   atualizar() {
-    this.usuario.tipo = this.tipoUsuario
+    if (!this.verificaSenha()) {
+      this.alertas.showAlertDanger('As senhas estão incorretas.')
 
-    if(this.usuario.senha != this.confirmarSenha) {
-      alert('As senhas estão incorretas.')
-    }else {
-      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
-        this.usuario = resp
-        this.router.navigate(['/entrar'])
-        alert('Usuário atualizado com sucesso, faça o login novamente!')
-        environment.userLogin.token = ''
-        environment.userLogin.nome = ''
-        environment.userLogin.foto = ''
-        environment.userLogin.id = 0
-        this.router.navigate(['/entrar'])
+    } else {
+      this.usuario.senha = this.novaSenha
+      delete this.usuario.postagens
 
+      this.authService.atualizarUsuario(this.usuario).subscribe({
+        next: () => {
+          this.alertas.showAlertSuccess('Informações atualizadas com sucesso!')
+          this.authService.limpaEnvironment()
+          this.router.navigate(['/entrar'])
+        },
+        error: error => {
+          console.error('There was an error!', error);
+          this.alertas.showAlertDanger('Houve um erro ao atualizar o usuario')
+        }
       })
     }
 
-  }
-
-  findByIdUsuario(id: number) {
-    this.authService.getByIdUsuario(id).subscribe((resp: Usuario) => {
-      this.usuario = resp
-    })
   }
 
 }

@@ -32,7 +32,7 @@ export class EntrarComponent implements OnInit {
       },
       error: error => {
         console.error('There was an error!', error);
-        this.alertas.showAlertDanger("Usuário ou senha estão incorretos!")
+        this.alertas.showAlertDanger("Os dados estão incorretos!")
       }
     })
   }

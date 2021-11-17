@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
+import { UserLogin } from '../model/UserLogin';
 import { Usuario } from '../model/Usuario';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
@@ -16,14 +17,16 @@ import { TemaService } from '../service/tema.service';
 })
 export class InicioComponent implements OnInit {
 
-  tema: Tema = new Tema()
-  user: Usuario = new Usuario()
-  postagem: Postagem
+  temaPostagemId: number
+  user: UserLogin = environment.userLogin
+  postagem: Postagem = new Postagem()
 
-  listaPostagens: Postagem[]
-  listaPostagensDoUsuario: Postagem[]
+  listaPostagens: Postagem[] = []
+  listaPostagensDoUsuario: Postagem[] = []
 
   listaTemas: Tema[]
+  temaUnico: Tema
+  postagensPorTemas: Postagem[]
 
   constructor(
     private router: Router,
@@ -42,6 +45,7 @@ export class InicioComponent implements OnInit {
       this.inicializaVariaveis()
       this.getAllTemas()
       this.getAllPostagens()
+      this.carregaUsuarioNoEnv()
     }
   }
 
@@ -50,6 +54,7 @@ export class InicioComponent implements OnInit {
       next: res => {
         this.listaTemas = res
         environment.temas = res
+        this.postagem.tema = this.listaTemas.find(tema => tema.id == this.temaPostagemId) || new Tema()
       },
       error: error => {
         console.error('There was an error!', error);
@@ -63,6 +68,7 @@ export class InicioComponent implements OnInit {
         this.listaPostagens = res
         environment.postagens = res
         this.listaPostagensDoUsuario = res.filter(post => post.usuario.id == environment.userLogin.id)
+        this.postagensPorTemas = this.listaPostagens.filter(post => post.tema.id == this.temaPostagemId)
       },
       error: error => {
         console.error('There was an error!', error);
@@ -71,16 +77,22 @@ export class InicioComponent implements OnInit {
   }
 
   publicar() {
-    this.postagem.tema = this.tema
+    this.postagem.tema = this.listaTemas.find(tema => tema.id == this.temaPostagemId) || new Tema()
 
     this.postagem.usuario = this.user
 
+    console.log(this.postagem);
+
     this.postagemService.postPostagem(this.postagem).subscribe({
       next: res => {
+        console.log(res);
+
         this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
         this.inicializaVariaveis()
         this.listaPostagens.push(res)
         this.listaPostagensDoUsuario.push(res)
+        console.log(this.listaPostagensDoUsuario);
+
       },
       error: error => {
         console.error('There was an error!', error);
@@ -91,9 +103,22 @@ export class InicioComponent implements OnInit {
 
   private inicializaVariaveis() {
     this.postagem = new Postagem()
-    this.postagem.texto = ''
-    this.tema.id = 1
-    this.user.id = environment.userLogin.id
+    this.temaPostagemId = 1
+  }
+
+  escolheTema(event: any) {
+    this.postagensPorTemas = this.listaPostagens.filter(post => post.tema.id == event.target.value) || []
+  }
+
+  carregaUsuarioNoEnv() {
+    this.authService.getUserById(environment.userLogin.id).subscribe({
+      next: res => {
+        environment.usuario = res
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    })
   }
 }
 

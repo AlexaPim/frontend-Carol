@@ -2,10 +2,13 @@
     background-color: #EAB7FC;
 }
 
-.texto-navbar {
+#letra {
     color: #8D43A7;
 }
 
+#letra:hover{
+    color: white;
+}
 .bg-page {
     background: linear-gradient(#9D4EDD, #8187DC);
     background-repeat: no-repeat;

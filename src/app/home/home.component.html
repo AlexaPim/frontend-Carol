@@ -8,25 +8,24 @@
     <div class="collapse navbar-collapse" id="textoNavbar">
         <ul class="navbar-nav mr-auto texto-navbar">
             <li class="nav-item active">
-                <a class="nav-link texto-navbar ml-2" href="#home" style="color: #8D43A7">Home<span
-                        class="sr-only">(Página
+                <a class="nav-link texto-navbar ml-2" href="#home" id="letra">Home<span class="sr-only">(Página
                         atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#projeto" style="color: #8D43A7">Sobre <span class="sr-only">(Página
+                <a class="nav-link" href="#projeto" id="letra">Sobre <span class="sr-only">(Página
                         atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#equipe" style="color: #8D43A7">Equipe <span class="sr-only">(Página
+                <a class="nav-link" href="#equipe" id="letra">Equipe <span class="sr-only">(Página
                         atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#contato" style="color: #8D43A7">Contato <span class="sr-only">(Página
+                <a class="nav-link" href="#contato" id="letra">Contato <span class="sr-only">(Página
                         atual)</span></a>
             </li>
         </ul>
         <span class="navbar-text">
-            <a class="text-white" *ngIf="!logado()" routerLink='/entrar'>Entrar <i class="fa fa-sign-in"
+            <a id="letra" *ngIf="!logado()" routerLink='/entrar' id="letra">Entrar <i class="fa fa-sign-in"
                     aria-hidden="true"></i></a>
         </span>
     </div>

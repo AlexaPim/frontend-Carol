@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
   userLogin = environment.userLogin
-  id = environment.userLogin.id
+  fotoUrl: string = environment.userLogin.foto
 
   constructor(
     private router: Router,

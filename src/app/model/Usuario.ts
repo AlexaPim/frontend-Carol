@@ -8,5 +8,5 @@ export class Usuario {
     public dataNascimento: string
     public foto: string
     public tipo: string
-    public postagem: Postagem
+    public postagens?: Postagem
 }

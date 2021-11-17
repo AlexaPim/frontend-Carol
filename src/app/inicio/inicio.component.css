@@ -4,8 +4,29 @@
     color: white;
 }
 
+.bg-imagem {
+    background: #f1c9ff;
+}
+
 .bt-confirmar {
     background: #5a189a;
     font-weight: bold;
     color: white;
+}
+
+.bt-novo-post {
+    background: #be74d6;
+}
+
+.bt-ver-post {
+    background: #ff85e9;
+}
+
+#imagem-principal {
+    max-width: 100%;
+    height: auto;
+}
+
+.fs-48 {
+    font-size: 48px;
 }

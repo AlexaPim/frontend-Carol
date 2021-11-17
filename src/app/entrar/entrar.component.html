@@ -2,20 +2,21 @@
     <div class="container py-5 vh-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card shadow-2-strong mb-5" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
 
                         <h3 class="mb-5">Entrar</h3>
 
                         <div class="form-outline mb-3">
                             <input [(ngModel)]='userLogin.email' type="email" class="form-control form-control-lg"
-                                name="usuario" id="usuario" placeholder="usuario@email.com" />
+                                name="usuario" id="usuario" placeholder="usuario@email.com" required
+                                aria-required="true">
                             <label class="form-label" for="usuario">Email</label>
                         </div>
 
                         <div class="form-outline mb-4">
                             <input [(ngModel)]='userLogin.senha' type="password" class="form-control form-control-lg"
-                                name="senha" id="senha" placeholder="Digite sua senha" />
+                                name="senha" id="senha" placeholder="Digite sua senha" required aria-required="true">
                             <label class="form-label" for="senha">Senha</label>
                         </div>
 

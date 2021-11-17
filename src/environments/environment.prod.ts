@@ -1,5 +1,6 @@
 import { Postagem } from "src/app/model/Postagem";
 import { Tema } from "src/app/model/Tema";
+import { Usuario } from "src/app/model/Usuario";
 
 export const environment = {
   production: true,
@@ -16,5 +17,6 @@ export const environment = {
     tipo: ''
   },
   postagens: [new Postagem()],
-  temas: [new Tema()]
+  temas: [new Tema()],
+  usuario: new Usuario()
 };

@@ -18,7 +18,7 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-  
+    overflow-x: hidden;
     width: 100%;
     height: 100vh;
   }
@@ -60,5 +60,6 @@
     background: -webkit-linear-gradient(to right, #9D4EDD, #8187DC);
   
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #9D4EDD, #8187DC)
+    background: linear-gradient(to right, #9D4EDD, #8187DC);
+    overflow-x: hidden;
 }

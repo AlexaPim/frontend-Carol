@@ -22,8 +22,12 @@ export class AuthService {
     return this.http.post<Usuario>(`${environment.baseUrl}/usuarios/cadastrar`, usuario)
   }
 
-  getByIdUsuario(id: number): Observable<Usuario>{
-    return this.http.get<Usuario>(`${environment.baseUrl}/usuarios/${id}`)
+  getUserById(id: number): Observable<Usuario> {
+    return this.http.get<Usuario>(`${environment.baseUrl}/usuarios/${id}`, { headers: { 'Authorization': environment.userLogin.token } })
+  }
+
+  atualizarUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>(`${environment.baseUrl}/usuarios/atualizar`, usuario, { headers: { 'Authorization': environment.userLogin.token } })
   }
 
   logado() {
@@ -41,6 +45,8 @@ export class AuthService {
       foto: '',
       tipo: ''
     }
+
+    environment.usuario = new Usuario()
   }
 
 }
