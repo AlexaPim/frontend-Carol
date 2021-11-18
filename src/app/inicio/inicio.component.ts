@@ -45,7 +45,6 @@ export class InicioComponent implements OnInit {
       this.inicializaVariaveis()
       this.getAllTemas()
       this.getAllPostagens()
-      this.carregaUsuarioNoEnv()
     }
   }
 
@@ -108,17 +107,6 @@ export class InicioComponent implements OnInit {
 
   escolheTema(event: any) {
     this.postagensPorTemas = this.listaPostagens.filter(post => post.tema.id == event.target.value) || []
-  }
-
-  carregaUsuarioNoEnv() {
-    this.authService.getUserById(environment.userLogin.id).subscribe({
-      next: res => {
-        environment.usuario = res
-      },
-      error: error => {
-        console.error('There was an error!', error);
-      }
-    })
   }
 }
 

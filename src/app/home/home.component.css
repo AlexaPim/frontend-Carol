@@ -1,60 +1,212 @@
-.navbar {
-    background-color: #EAB7FC;
+#home::before {
+  display: block;
+  content: '';
+  height: 65px;
+  background-color: rgb(238, 190, 228);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
+
+.log {
+  align-items: center;
+}
+
+.text-edit {
+  font-family: Ubuntu;
 }
 
 #letra {
-    color: #8D43A7;
+  color: #7b3b94;
 }
 
-#letra:hover{
-    color: white;
-}
-.bg-page {
-    background: linear-gradient(#9D4EDD, #8187DC);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position-x: center;
-    background-position-y: center;
-    background-size: cover;
-    overflow-x: hidden;
+#letra:hover {
+  color: white;
 }
 
-.logo-carol {
-    width: 60px;
-    margin: 0;
+.font-size-lp {
+  font-size: 1rem;
 }
 
-.bg-sobre {
-    background: #EAB7FC;
-    border-radius: 1rem;
+.navbar {
+  background-color: #EAB7FC;
 }
 
-.missao {
-    background: #EAB7FC;
-    padding: auto;
-    border-radius: 1rem;
-}
-
-.img-fluid {
-    border-radius: 1rem;
-}
-
-.p-texto {
-    font-size: 18px;
-}
-
-.tm-social {
-    width: 30px;
-    height: 30px;
+.texto-navbar {
+  font-size: 1.4rem;
+  color: #8D43A7;
+  align-items: center;
+  ;
 }
 
 .gradient-custom {
-    /* fallback for old browsers */
-    background: #9D4EDD;
-  
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, #9D4EDD, #8187DC);
-  
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #9D4EDD, #8187DC)
+  /* fallback for old browsers */
+  background: #6a11cb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #9D4EDD, #8187DC);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #9D4EDD, #8187DC);
+  border-radius: 8px;
+
+}
+
+.navbar {
+  border: none;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: rgb(238, 190, 228);
+  color: white;
+  /* border-radius: 30px; */
+  transition: 1s;
+  z-index: 999;
+}
+
+.bg-page {
+  /* background: linear-gradient(#8187DC, #740d5f); */
+  background-color: #EAB7FC;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.bg-overflow {
+  overflow-x: hidden;
+}
+
+.logo-carol {
+  width: 60px;
+  margin: 0;
+}
+
+.bg-sobre {
+  background: #EAB7FC;
+  border-radius: 1rem;
+}
+
+.missao {
+  background: #EAB7FC;
+  padding: auto;
+  border-radius: 1rem;
+}
+
+.img-fluid {
+  border-radius: 1rem;
+}
+
+.p-texto {
+  font-size: 18px;
+}
+
+.tm-social {
+  width: 30px;
+  height: 30px;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #9D4EDD;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #9D4EDD, #8187DC);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #9D4EDD, #8187DC)
+}
+
+/* body,
+html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+} */
+
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-opacity-lp {
+  opacity: 0.30;
+}
+
+.bgimg-1 {
+  background-image: url("https://i.imgur.com/9QRHQzn.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("https://i.imgur.com/9QRHQzn.jpg");
+  min-height: 300px;
+}
+
+.bgimg-3 {
+  background-image: url("https://i.imgur.com/9QRHQzn.jpg");
+  min-height: 300px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+.sobre-equipe {
+  background-color: #8D43A7;
+  font-size: 25px;
+  font-style: inherit;
+  color: #f7f7f7
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+
+  .bgimg-1,
+  .bgimg-2,
+  .bgimg-3 {
+    background-attachment: scroll;
+  }
 }

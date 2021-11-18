@@ -11,19 +11,32 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
   userLogin = environment.userLogin
-  fotoUrl: string = environment.userLogin.foto
+  fotoUrl: string
 
   constructor(
     private router: Router,
-    private auth: AuthService
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
+    this.carregaUsuarioNoEnv()
   }
 
   sair() {
     this.router.navigate(['/home'])
-    this.auth.limpaEnvironment()
+    this.authService.limpaEnvironment()
+  }
+
+  carregaUsuarioNoEnv() {
+    this.authService.getUserById(environment.userLogin.id).subscribe({
+      next: res => {
+        environment.usuario = res
+        this.fotoUrl = environment.usuario.foto
+      },
+      error: error => {
+        console.error('There was an error!', error);
+      }
+    })
   }
 
 }
