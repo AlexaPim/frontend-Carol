@@ -1,5 +1,7 @@
 .page-footer {
-    background: #8C32B7;
+    background: linear-gradient(#C56BDA,  #8C32B7, #f72585);
+    background: -o-linear-gradient(#C56BDA,  #8C32B7, #f72585);
+    
 }
 
 ul.social-network {
@@ -27,10 +29,10 @@ ul.social-network li {
     color: blue;
 }
 
-.fa-instagram-square:hover {
+.fa-instagram:hover {
     color: pink;
 }
 
 .footer-copyright {
-    background-color: #BEA0F0;
+    background-color: #f72585;
 }

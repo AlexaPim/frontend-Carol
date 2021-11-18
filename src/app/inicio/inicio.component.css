@@ -30,3 +30,17 @@
 .fs-48 {
     font-size: 48px;
 }
+
+.card{
+  min-width: min-content;
+  border-radius: 10px!important;
+  background-color: #f1c9ff;
+}
+
+.nav-item{
+    background-color: #f1c9ff;
+    
+}
+.nav-item:hover{
+    background-color: #ff2edc;
+}

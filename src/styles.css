@@ -11,7 +11,30 @@ html {
     font-size: 18px;
 }
 
+.font-purple {
+  color: rgb(109, 43, 101);
+}
+
 .form-control:focus {
     box-shadow: none;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(143, 32, 134); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(174, 49, 186); 
+  }

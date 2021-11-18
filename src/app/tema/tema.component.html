@@ -18,14 +18,14 @@
             <input [(ngModel)]='tema.descricao' type="text" class="form-control" id="descricao"
               placeholder="Digite a descrição do tema">
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <input [(ngModel)]='tema.qntd_post' type="number" class="form-control" id="qntd_post"
               placeholder="Digite a quatidade de posts">
           </div>
           <div class="form-group">
             <input [(ngModel)]='tema.relevante' type="number" class="form-control" id="relevante"
               placeholder="Digite a relevancia">
-          </div>
+          </div> -->
           <div class="d-flex justify-content-center align-items-center">
             <button type="button" class="btn bt-cancelar mr-3" routerLink='/inicio'>Cancelar</button>
             <button type="button" class="btn bt-confirmar" (click)='cadastrar()'>Cadastrar</button>
@@ -49,8 +49,8 @@
               <th scope="col">#</th>
               <th scope="col">Nome</th>
               <th scope="col">Descrição</th>
-              <th scope="col">Quantidade</th>
-              <th scope="col">Relevância</th>
+              <!-- <th scope="col">Quantidade</th> -->
+              <!-- <th scope="col">Relevância</th> -->
               <th scope="col">Modificações</th>
             </tr>
           </thead>
@@ -59,11 +59,11 @@
               <th>{{ tema.id }}</th>
               <td>{{ tema.nome }}</td>
               <td>{{ tema.descricao }}</td>
-              <td>{{ tema.qntd_post }}</td>
-              <td>{{ tema.relevante }}</td>
+              <!-- <td>{{ tema.qntd_post }}</td> -->
+              <!-- <td>{{ tema.relevante }}</td> -->
               <td class="d-flex justify-content-end">
-                <button class="btn btn-info btn-sm mr-2" [routerLink]="['/tema-edit', tema.id]">Editar</button>
-                <button class="btn btn-danger btn-sm" [routerLink]="['/tema-delete', tema.id]">Apagar</button>
+                <button class="btn bt-confirmar btn-sm mr-2" [routerLink]="['/tema-edit', tema.id]">Editar</button>
+                <button class="btn bt-cancelar btn-sm" [routerLink]="['/tema-delete', tema.id]">Apagar</button>
               </td>
             </tr>
           </tbody>

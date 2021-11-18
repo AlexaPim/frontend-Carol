@@ -21,7 +21,9 @@ export class EntrarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0, 0)
+    if (environment.userLogin.token !== '') {
+      this.authService.limpaEnvironment()
+    }
   }
 
   entrar() {

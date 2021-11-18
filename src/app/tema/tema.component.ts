@@ -25,6 +25,9 @@ export class TemaComponent implements OnInit {
   ngOnInit() {
     if (environment.userLogin.token == '') {
       this.router.navigate(['/entrar'])
+    } else {
+      this.tema.qntd_post = 1
+      this.tema.relevante = 1
     }
   }
 

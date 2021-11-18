@@ -57,9 +57,9 @@
     background: #9D4EDD;
   
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, #9D4EDD, #8187DC);
+    background: -webkit-linear-gradient(to right, #5a189a, #f72585);
   
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #9D4EDD, #8187DC);
+    background: linear-gradient(to right, #5a189a, #f72585);
     overflow-x: hidden;
 }

@@ -9,24 +9,27 @@
         <img [src]="fotoUrl" alt=" imagem do usuario" width="50px" height="50px" class="img-fluid rounded-circle">
       </li>
       <li class="nav-item pl-3">
-        <p class="m-0 font-weight-bold-light text-white fs-16">Olá, {{ userLogin.nome }}</p>
+        <p class="m-0 font-weight-bold text-white fs-16">Olá, {{ userLogin.nome }}</p>
       </li>
-      <li class="nav-item pl-3">
+      <li class="nav-item pl-1">
         <a [routerLink]="['/usuario-edit', userLogin.id]">
           <p class="text-white fs-16 m-0">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <i class="fa fa-pencil-square-o " aria-hidden="true"></i>
           </p>
         </a>
       </li>
-      <li class="nav-item pl-3">
-        <a class="nav-link active text-white" aria-current="page" routerLink='/inicio'>Início</a>
+      <li class="nav-item pl-3 ">
+        <a class="nav-link active d-flex justify-content-center text-white font-weight-bold align-items-center"
+          aria-current="page" routerLink='/inicio'>Início</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto d-flex align-items-center">
       <li class="nav-item pl-3">
-        <a (click)='sair()' class="m-0 font-weight-bold-light text-white fs-16">Sair <i class="fa fa-sign-out"
+        <button (click)='sair()' class="m-0 font-weight-bold gradient-custom text-white fs-16">Sair <i
+            class="fa fa-sign-out" aria-hidden="true"></i></button>
+        <!-- <a (click)='sair()' class="m-0 font-weight-bold-light text-white fs-16">Sair <i class="fa fa-sign-out"
             aria-hidden="true"></i>
-        </a>
+        </a> -->
       </li>
     </ul>
   </div>

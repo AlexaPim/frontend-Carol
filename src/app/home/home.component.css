@@ -4,31 +4,10 @@
   height: 65px;
   background-color: rgb(238, 190, 228);
 }
-
-/* width */
-::-webkit-scrollbar {
-  width: 20px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: red;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000;
-}
-
-.log {
-  align-items: center;
+.card{
+  margin-left:20x;
+  margin-right:20px;
+  /* border-color: rgb(199, 42, 175); */
 }
 
 .text-edit {
@@ -44,7 +23,15 @@
 }
 
 .font-size-lp {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.75;
+  text-align: start;
+}
+
+.font-size-lp-2 {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  text-align: center;
 }
 
 .navbar {
@@ -55,18 +42,18 @@
   font-size: 1.4rem;
   color: #8D43A7;
   align-items: center;
-  ;
+
 }
 
 .gradient-custom {
   /* fallback for old browsers */
-  background: #6a11cb;
+  background: #5a189a;
 
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, #9D4EDD, #8187DC);
+  background: -webkit-linear-gradient(to right, #5a189a, #f72585);
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #9D4EDD, #8187DC);
+  background: linear-gradient(to right, #5a189a, #f72585);
   border-radius: 8px;
 
 }
@@ -124,28 +111,13 @@
 }
 
 .tm-social {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
-.gradient-custom {
-  /* fallback for old browsers */
-  background: #9D4EDD;
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, #9D4EDD, #8187DC);
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #9D4EDD, #8187DC)
+.footer-home {
+  background: rgb(209, 143, 195);
 }
-
-/* body,
-html {
-  height: 100%;
-  margin: 0;
-  font: 400 15px/1.8 "Lato", sans-serif;
-  color: #777;
-} */
 
 .bgimg-1,
 .bgimg-2,
@@ -186,7 +158,7 @@ html {
 }
 
 .caption span.border {
-  background-color: #111;
+  background-color:rgb(150, 24, 146);
   color: #fff;
   padding: 18px;
   font-size: 25px;
@@ -200,6 +172,15 @@ html {
   color: #f7f7f7
 }
 
+.custom-card {
+  min-width: min-content;
+  border-radius: 4px!important;
+  box-shadow: 0 0 1px 0 rgb(199, 42, 175);;
+}
+
+.card-group {
+  flex-flow: nowrap;
+}
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
@@ -210,3 +191,4 @@ html {
     background-attachment: scroll;
   }
 }
+

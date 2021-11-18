@@ -17,6 +17,9 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (environment.userLogin.token !== '') {
+      this.authService.limpaEnvironment()
+    }
   }
 
   logado() {

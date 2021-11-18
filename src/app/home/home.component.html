@@ -17,22 +17,18 @@
                         atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#missao" id='letra'>Missão <span class="sr-only">(Página
-                        atual)</span></a>
-            </li>
-            <li class="nav-item active">
                 <a class="nav-link" href="#equipe" id="letra">Equipe <span class="sr-only">(Página
                         atual)</span></a>
             </li>
-            <li class="nav-item active">
+            <!-- <li class="nav-item active">
                 <a class="nav-link" href="#contato" id="letra">Contato <span class="sr-only">(Página
                         atual)</span></a>
-            </li>
-        
+            </li> -->
+
         </ul>
         <span class='log'>
-            <button class="texto-navbar gradient-custom text-white" *ngIf="!logado()" routerLink='/entrar' >Entrar <i class="fa fa-sign-in"
-                aria-hidden="true"></i></button>
+            <button class="texto-navbar gradient-custom text-white" *ngIf="!logado()" routerLink='/entrar'>Entrar <i
+                    class="fa fa-sign-in" aria-hidden="true"></i></button>
         </span>
     </div>
 </nav>
@@ -47,28 +43,19 @@
     </div>
 
     <div class="row" id="projeto"
-        style="color: rgb(109, 43, 101);background-color:#ffffff;text-align:center;padding:20px 60px;text-align: center;">
+        style="color: rgb(109, 43, 101); background-color:#ffffff;text-align:center;padding:20px 60px;text-align: center;">
         <div class="col-md-6 mt-5">
-            <h1 class="d-flex justify-content-center mt-5 mb-5">Sobre o projeto</h1>
+            <h1 class="d-flex justify-content-center mt-3 mb-5">Sobre o projeto</h1>
 
             <p class="font-size-lp">
-                Rede social para mulheres em vulnerabilidade social e econômica, que estão em busca de reinserção no
-                mercado de trabalho.
-            </p>
-            <p class="font-size-lp">
-                O objetivo é proporcionar atendimento da forma mais prática possível e gratuita a mulheres que
-                estejam passando por momento de vulnerabilidade econômica. A intenção é apresentar uma rede social
-                na qual elas possam postar o seu objetivo, além da troca de experiências entre as usuárias.
-            </p>
-            <p class="font-size-lp">
-                Recrutadores poderão selecionar a postagem que gostariam de oferecer ajuda e ter acesso às
-                informações da mulher para contato. A forma de identificação ou busca do post é através da geração
-                de um ID para cada post criado.
+                Carol é uma rede social desenvolvida para mulheres em vunerabilidade social e econômica que buscam
+                ingressar ou reincidir no mercado de trabalho. As vagas são postadas por elas, de forma gratuita e os
+                recrutadores entram em contato com as usuárias de acordo com a disponibilidade de vagas nas empresas.
             </p>
 
         </div>
-        <div class="col-md-6">
-            <img class="w-100 " src="https://i.imgur.com/BpJBHXx.png" alt="">
+        <div class="col-md-6 d-flex mt-auto mb-auto">
+            <img class="w-100" src="https://i.imgur.com/BpJBHXx.png" alt="">
         </div>
     </div>
 
@@ -79,37 +66,34 @@
         </div>
     </div> -->
 
-    <div class="row"
-        style="color: rgb(109, 43, 101);background-color:#ebd1f265;text-align:center;padding:30px 60px;text-align:center;">
-        <div class="col-md-4 mt-0" id="missao">
-            <img class="w-50" src="https://i.imgur.com/YKo15KB.png" alt="">
-            <h3 class="d-flex justify-content-center mt-5 mb-5">Sobre o projeto</h3>
+    <div class="row" style="color: rgb(109, 43, 101);background-color:#ebd1f265;padding:30px 60px;text-align:center">
+        <div class="col-md-4 mb-4" id="missao">
+            <img class="w-50 mt-4" src="https://i.imgur.com/YKo15KB.png" alt="">
+            <h3 class="d-flex justify-content-center mt-4 mb-3">Facilidade</h3>
             <div class="col-md-12 bg-sobre">
-                <p class="font-size-lp ">
-                    Rede social para mulheres em vulnerabilidade social e econômica, que estão em busca de reinserção no
-                    mercado de trabalho.
+                <p class="font-size-lp-2">
+                    Queremos proporcionar uma solução prática e gratuita a mulheres que
+                    estejam passando por momento de vulnerabilidade econômica.
                 </p>
             </div>
         </div>
-        <div class="col-md-4 mt-0" id="missao">
-            <img class="w-50" src="https://i.imgur.com/c1635r5.png" alt="">
-            <h3 class="d-flex justify-content-center mt-5 mb-5">Sobre o projeto</h3>
-            <div class="col-md-12">
-                <p class="font-size-lp ">
-                    O objetivo é proporcionar atendimento da forma mais prática possível e gratuita a mulheres que
-                    estejam passando por momento de vulnerabilidade econômica. A intenção é apresentar uma rede social
-                    na qual elas possam postar o seu objetivo, além da troca de experiências entre as usuárias.
+        <div class="col-md-4 mb-4" id="missao">
+            <img class="w-50 mt-4" src="https://i.imgur.com/c1635r5.png" alt="">
+            <h3 class="d-flex justify-content-center mt-4 mb-3">Humanidade</h3>
+            <div class="col-md-12 bg-sobre">
+                <p class="font-size-lp-2">
+                    Compartilhe experiências e dicas profissionais que possam ajudar outras mulheres a conseguir o tão
+                    esperado emprego.
                 </p>
             </div>
         </div>
-        <div class="col-md-4 mt-0" id="missao">
-            <img class="w-50" src="https://i.imgur.com/8Ot6cPg.png" alt="">
-            <h3 class="d-flex justify-content-center mt-5 mb-5">Sobre o projeto</h3>
+        <div class="col-md-4 mb-4" id="missao">
+            <img class="w-50 mt-4" src="https://i.imgur.com/8Ot6cPg.png" alt="">
+            <h3 class="d-flex justify-content-center mt-4 mb-3">Apoio</h3>
             <div class="col-md-12 bg-sobre">
-                <p class="font-size-lp ">
-                    Recrutadores poderão selecionar a postagem que gostariam de oferecer ajuda e ter acesso às
-                    informações da mulher para contato. A forma de identificação ou busca do post é através da geração
-                    de um ID para cada post criado.
+                <p class="font-size-lp-2">
+                    Recrutadores de todas as áreas podem ter fácil acesso às informações que você disponilizar para
+                    contato profissional.
                 </p>
             </div>
         </div>
@@ -120,103 +104,119 @@
 
     <div class="bgimg-3" id="equipe">
         <div class="caption">
-            <span class="border sobre-equipe"
-               >NOSSA EQUIPE</span>
+            <span class="border sobre-equipe">NOSSA EQUIPE</span>
         </div>
     </div>
 
-    <div style="position:relative;">
-        <div style="background-color:#EAB7FC;text-align:center;padding:50px 80px;text-align: justify;">
+    <div class="row g-4" style="background-color:#EAB7FC;text-align:center;padding:50px;text-align: justify;">
 
-            <div class="card-group">
+        <div class="card-group">
 
-                <div class="card align-items-center">
-                    <img class="card-img-top" src="https://i.imgur.com/m3bxspd.png" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Alexa Prado</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">FullStack</h6>
-                        <hr>
-                        <a href="https://github.com/AlexaPim" class="p-3" target="_blanck">
-                            <img class="tm-social" src="https://i.imgur.com/S6SoXO3.png" alt="Logo do Github">
-                        </a>
-                        <a href="https://www.linkedin.com/in/alexssandra-pimentel/" class="p-3" target="_blanck">
-                            <img class="tm-social" src="https://i.imgur.com/NdEzaWE.png" alt="Logo do Linkedin">
-                        </a>
+            <div class="card custom-card align-items-center">
 
-                    </div>
-                </div>
-
-                <div class="card align-items-center">
-                    <img class="card-img-top" src="https://avatars.githubusercontent.com/u/62313672?v=4"
+                <div class="card-body d-flex flex-column">
+                    <img class="card-img-top rounded mb-1" src="https://i.imgur.com/m3bxspd.png"
                         alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Deivit Bonach</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Tech Lead</h6>
-                        <hr>
-                        <a href="https://github.com/dbonach" class="p-3" target="_blanck">
+                    <h5 class="card-title text-center">Alexssandra Prado</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-center">FullStack</h6>
+                    <hr class="w-100">
+                    <div class="d-flex justify-content-around mt-auto">
+                        <a href="https://github.com/AlexaPim" target="_blanck">
                             <img class="tm-social" src="https://i.imgur.com/S6SoXO3.png" alt="Logo do Github">
                         </a>
-                        <a href="https://www.linkedin.com/in/deivit-bonach-a6102112b/" class="p-3" target="_blanck">
+                        <a href="https://www.linkedin.com/in/alexssandra-pimentel/" target="_blanck">
                             <img class="tm-social" src="https://i.imgur.com/NdEzaWE.png" alt="Logo do Linkedin">
                         </a>
-
                     </div>
+
                 </div>
-
-                <div class="card align-items-center">
-                    <img class="card-img-top" src="https://avatars.githubusercontent.com/u/84036601?v=4"
-                        alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Ilanna Freire</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Product Owner</h6>
-                        <hr>
-                        <a href="https://github.com/ilannafreire" class="p-3" target="_blanck">
-                            <img class="tm-social" src="https://i.imgur.com/S6SoXO3.png" alt="Logo do Github">
-                        </a>
-                        <a href="https://www.linkedin.com/in/ilanna-freire/" class="p-3" target="_blanck">
-                            <img class="tm-social" src="https://i.imgur.com/NdEzaWE.png" alt="Logo do Linkedin">
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="card align-items-center">
-                    <img class="card-img-top" src="https://avatars.githubusercontent.com/u/80111155?v=4"
-                        alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Ivan Carlos</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">FullStack</h6>
-                        <hr>
-                        <a href="https://github.com/ivancarlos88" class="p-3" target="_blanck">
-                            <img class="tm-social" src="https://i.imgur.com/S6SoXO3.png" alt="Logo do Github">
-                        </a>
-                        <a href="https://www.linkedin.com/in/ivan-carlos-mamani-sacari-59a0391a7/" class="p-3"
-                            target="_blanck">
-                            <img class="tm-social" src="https://i.imgur.com/NdEzaWE.png" alt="Logo do Linkedin">
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="card align-items-center">
-                    <img class="card-img-top" src="https://i.imgur.com/C9h8QwR.jpg" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Johnny Alves</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">FullStack</h6>
-                        <hr>
-                        <a href="https://github.com/johnnyalvesx" class="p-3" target="_blanck">
-                            <img class="tm-social " src="https://i.imgur.com/S6SoXO3.png" alt="Logo do Github">
-                        </a>
-                        <a href="https://www.linkedin.com/in/johnnyalvesx/
-                            " class="p-3" target="_blanck">
-                            <img class="tm-social" src="https://i.imgur.com/NdEzaWE.png" alt="Logo do Linkedin">
-                        </a>
-
-                    </div>
-                </div>
-
             </div>
+
+            <div class="card custom-card align-items-center">
+
+                <div class="card-body d-flex flex-column">
+                    <img class="card-img-top rounded mb-1" src="https://avatars.githubusercontent.com/u/62313672?v=4"
+                        alt="Imagem de capa do card">
+                    <h5 class="card-title text-center">Deivit Bonach</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-center">Tech Lead</h6>
+                    <hr class="w-100">
+                    <div class="d-flex justify-content-around mt-auto">
+                        <a href="https://github.com/dbonach" target="_blanck">
+                            <img class="tm-social" src="https://i.imgur.com/S6SoXO3.png" alt="Logo do Github">
+                        </a>
+                        <a href="https://www.linkedin.com/in/deivit-bonach-a6102112b/" target="_blanck">
+                            <img class="tm-social" src="https://i.imgur.com/NdEzaWE.png" alt="Logo do Linkedin">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card custom-card align-items-center">
+
+                <div class="card-body d-flex flex-column">
+                    <img class="card-img-top rounded mb-1" src="https://avatars.githubusercontent.com/u/84036601?v=4"
+                        alt="Imagem de capa do card">
+                    <h5 class="card-title text-center">Ilanna Freire</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-center">Product Owner</h6>
+                    <hr class="w-100">
+                    <div class="d-flex justify-content-around mt-auto">
+                        <a href="https://github.com/ilannafreire" target="_blanck">
+                            <img class="tm-social" src="https://i.imgur.com/S6SoXO3.png" alt="Logo do Github">
+                        </a>
+                        <a href="https://www.linkedin.com/in/ilanna-freire/" target="_blanck">
+                            <img class="tm-social" src="https://i.imgur.com/NdEzaWE.png" alt="Logo do Linkedin">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="card custom-card align-items-center ">
+                <div class="card-body d-flex flex-column">
+                    <img class="card-img-top rounded mb-1" src="https://avatars.githubusercontent.com/u/80111155?v=4"
+                        alt="Imagem de capa do card">
+                    <h5 class="card-title text-center">Ivan Carlos</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-center">FullStack</h6>
+                    <hr class="w-100">
+                    <div class="d-flex justify-content-around mt-auto">
+                        <a href="https://github.com/ivancarlos88" target="_blanck">
+                            <img class="tm-social" src="https://i.imgur.com/S6SoXO3.png" alt="Logo do Github">
+                        </a>
+                        <a href="https://www.linkedin.com/in/ivan-carlos-mamani-sacari-59a0391a7/" target="_blanck">
+                            <img class="tm-social" src="https://i.imgur.com/NdEzaWE.png" alt="Logo do Linkedin">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card custom-card align-items-center">
+                <div class="card-body d-flex flex-column">
+                    <img class="card-img-top rounded mb-1" src="https://i.imgur.com/C9h8QwR.jpg"
+                        alt="Imagem de capa do card">
+                    <h5 class="card-title text-center">Johnny Alves</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-center">FullStack</h6>
+                    <hr class="w-100">
+                    <div class="d-flex justify-content-around mt-auto">
+                        <a href="https://github.com/johnnyalvesx" target="_blanck">
+                            <img class="tm-social" src="https://i.imgur.com/S6SoXO3.png" alt="Logo do Github">
+                        </a>
+                        <a href="https://www.linkedin.com/in/johnnyalvesx/" target="_blanck">
+                            <img class="tm-social" src="https://i.imgur.com/NdEzaWE.png" alt="Logo do Linkedin">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+
         </div>
+
     </div>
 
     <!-- /Parallax -->
@@ -227,7 +227,7 @@
 
         <div class="col-md-8 bg-light" style="border-radius: 1rem;">
 
-            <form>
+            <!-- <form>
                 <div class="form-group">
                     <h3 class="mb-5 mt-3 text-center">Entre em contato</h3>
                     <label for="exampleFormControlInput1">Nome completo</label>
@@ -246,7 +246,7 @@
                     <button class="btn-lg btn-block gradient-custom mt-2" type="submit" (click)='enviar()'
                         type="reset">Enviar</button>
                 </div>
-            </form>
+            </form> -->
 
         </div>
 
@@ -256,8 +256,8 @@
 
 
     <footer>
-        <div class="row mb-0">
-            <div class="col-md-12 d-flex justify-content-center mt-5">
+        <div class="row mb-0 ">
+            <div class="col-md-12 d-flex justify-content-center mt-5 footer-home">
 
                 <a href="https://github.com/AlexaPim/frontend-Carol" class="p-3" target="_blanck">
                     <img class="tm-social" src="https://i.imgur.com/S6SoXO3.png" alt="Logo do Github">
@@ -265,9 +265,10 @@
 
             </div>
         </div>
-        <div class="row">
+        <div class="row footer-home">
             <div class="col-md-12">
-                <p class="text-center">&copy;2021 Todos os direitos reservados para: Carol | Generation Brasil</p>
+                <p class="text-center ">&copy;2021 Todos os direitos reservados para: Carol | Generation
+                    Brasil</p>
             </div>
         </div>
 

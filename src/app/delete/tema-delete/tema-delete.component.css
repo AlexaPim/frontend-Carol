@@ -1,0 +1,11 @@
+.bt-confirmar {
+    background: #5a189a;
+    font-weight: bold;
+    color: white;
+}
+
+.bt-cancelar{
+    background: #f72585;
+    font-weight: bold;
+    color: white;
+}

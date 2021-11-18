@@ -1,5 +1,6 @@
 .navbar {
-    background: #8C32B7;
+    /* background: #8C32B7; */
+    background: linear-gradient(#8C32B7, #C46ADA, #C56BDA);
 }
 
 .fs-16 {
@@ -13,3 +14,21 @@
 a:hover {
     cursor: pointer;
 }
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #f72585;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: -webkit-linear-gradient(to right, #5a189a, #f72585); */
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: linear-gradient(to right, #5a189a, #f72585); */
+    border-radius: 8px;
+  
+  }
+
+  .linha-vertical {
+    height: 60px;/*Altura da linha*/
+    border-left: 1px solid;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+  }
