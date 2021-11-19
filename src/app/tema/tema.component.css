@@ -9,5 +9,8 @@
     background: #5a189a;
     font-weight: bold;
     color: white;
-    
+}
+
+#th-descricao {
+    min-width: 400px;
 }

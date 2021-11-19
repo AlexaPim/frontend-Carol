@@ -22,6 +22,7 @@ export class CadastrarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0)
+    this.usuario.tipo = 'normal'
   }
 
   setaSenhaParaConfirmar(event: any) {
